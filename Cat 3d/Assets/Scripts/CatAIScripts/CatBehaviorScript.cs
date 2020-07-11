@@ -11,7 +11,7 @@ public abstract class CatBehaviorScript : MonoBehaviour
 
     }
 
-    public virtual void InitializeBehavior()
+    public virtual void Start()
     {
 
     }

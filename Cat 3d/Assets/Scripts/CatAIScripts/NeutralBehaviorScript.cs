@@ -11,12 +11,6 @@ public class NeutralBehaviorScript : CatBehaviorScript
 
     private IEnumerator coroutine;
 
-    public NeutralBehaviorScript(float speed, Rigidbody rb)
-    {
-        this.speed = speed;
-        this.rb = rb;
-    }
-
     enum State
     {
         Idle,
@@ -25,10 +19,12 @@ public class NeutralBehaviorScript : CatBehaviorScript
 
     private State state;
 
-    public override void InitializeBehavior()
+    public override void Start()
     {
-        coroutine = Idle();
-        StartCoroutine(coroutine);
+        rb = gameObject.GetComponent<Rigidbody>();
+        speed = gameObject.GetComponent<CatScript>().getSpeed();
+        Debug.Log("Starting Behavior");
+        StartCoroutine(Idle());
     }
 
     // Update is called once per frame
@@ -36,24 +32,26 @@ public class NeutralBehaviorScript : CatBehaviorScript
     {
         if (state == State.Walking)
         {
-            rb.velocity = direction * speed * Time.fixedDeltaTime;
+            rb.velocity = direction * speed * Time.fixedDeltaTime * 10;
         }
     }
 
     IEnumerator Idle()
     {
+        Debug.Log(state);
         yield return new WaitForSeconds(Random.Range(0, 10));
 
         ChangeDirection();
         state = State.Walking;
 
-        coroutine = Walking();
-        StartCoroutine(coroutine);
+        StartCoroutine(Walking());
     }
 
     IEnumerator Walking()
     {
-        int turns = Random.Range(0, 2);
+        Debug.Log(state);
+        Debug.Log(direction);
+        int turns = Random.Range(1, 2);
         for (int i = 0; i < turns; i++)
         {
             yield return new WaitForSeconds(Random.Range(0, 10));
@@ -62,12 +60,15 @@ public class NeutralBehaviorScript : CatBehaviorScript
         }
 
         state = State.Idle;
-        coroutine = Idle();
-        StartCoroutine(coroutine);
+        StartCoroutine(Idle());
     }
 
     private void ChangeDirection()
     {
-        direction = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1)).normalized;
+        direction = Random.insideUnitCircle.normalized;
+        direction.z = direction.y;
+        direction.y = 0;
+        Quaternion temp = Quaternion.LookRotation(direction, Vector3.up);
+        direction = temp * this.transform.forward;
     }
 }

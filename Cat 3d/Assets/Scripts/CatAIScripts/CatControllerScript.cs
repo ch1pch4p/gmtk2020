@@ -16,18 +16,9 @@ public class CatControllerScript : MonoBehaviour
     private float perc;
     private float spd;
 
-    public CatControllerScript(float str, float end, float foc, float anger, float perc, float spd, Rigidbody rb)
+    void Start()
     {
-        this.str = str;
-        this.end = end;
-        this.foc = foc;
-        this.anger = anger;
-        this.perc = perc;
-        this.spd = spd;
-        this.rb = rb;
-
-        currentBehavior = new NeutralBehaviorScript(this.spd, this.rb);
-        currentBehavior.InitializeBehavior();
+        currentBehavior = gameObject.AddComponent<NeutralBehaviorScript>();
     }
 
 
