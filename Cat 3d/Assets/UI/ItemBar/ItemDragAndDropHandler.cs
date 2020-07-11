@@ -7,7 +7,6 @@ public class ItemDragAndDropHandler : MonoBehaviour, IDragHandler, IEndDragHandl
 {
     public RectTransform itemPanel;
     public GameObject realWorldObject;
-    public GameObject test;
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
