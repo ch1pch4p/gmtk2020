@@ -32,10 +32,17 @@ public class CatVision : MonoBehaviour
             // Draw a ray pointing at our target in
             Debug.DrawRay(transform.position, newDirection, Color.red);
 
+            //Quaternion dir = Quaternion.LookRotation(newDirection, Vector3.up);
+            //newDirection = dir * Vector3.forward;
+
             // Calculate a rotation a step closer to the target and applies rotation to this object
-            transform.rotation = Quaternion.LookRotation(newDirection);
-            GetComponent<Rigidbody>().AddForce(targetDir);
-            GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, maxSpeed);
+            Physics.Raycast(transform.position, -1 * transform.up, out RaycastHit hit);
+            Debug.Log("Cat-to-Surface normal: " + hit.normal);
+            transform.rotation = Quaternion.LookRotation(newDirection, hit.normal);
+            GetComponent<Rigidbody>().AddForce(transform.forward * 100);
+            Vector3 velocityToClamp = new Vector3(GetComponent<Rigidbody>().velocity.x, 0, GetComponent<Rigidbody>().velocity.z);
+            Vector3 clampedVelocity = Vector3.ClampMagnitude(velocityToClamp, maxSpeed);
+            GetComponent<Rigidbody>().velocity = new Vector3(clampedVelocity.x, GetComponent<Rigidbody>().velocity.y, clampedVelocity.z);
         }
     }
 }
