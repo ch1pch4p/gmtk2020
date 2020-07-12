@@ -35,8 +35,9 @@ public class CatControllerScript : MonoBehaviour
     {
         cat = GetComponent<CatScript>();
 
+        catActions = new ActionScript[1];
         catActions[(int)CatActions.Resting] = gameObject.AddComponent<RestingActionScript>();
-        catActions.SetValue(gameObject.AddComponent<MillingActionsScript>(), (int)CatActions.Milling);
+        //catActions.SetValue(gameObject.AddComponent<MillingActionsScript>(), (int)CatActions.Milling);
     }
 
     public void Lock()
@@ -58,10 +59,10 @@ public class CatControllerScript : MonoBehaviour
 
             UpdateWeights();
 
-            currentAction = catActions[Choose(ActionWeights)];
+            //currentAction = catActions[Choose(ActionWeights)];
         }
         
-        currentAction.Act();
+        //currentAction.Act();
     }
 
     private void UpdateWeights()
