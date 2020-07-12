@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatVision : MonoBehaviour
+public class CatVision : ActionScript
 {
     float maxSpeed = 10f;
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        
+        base.Start();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public override void Act()
     {
         if (Item.currentlyHeldItem == null)
         {
@@ -39,10 +39,10 @@ public class CatVision : MonoBehaviour
             Physics.Raycast(transform.position, -1 * transform.up, out RaycastHit hit);
             Debug.Log("Cat-to-Surface normal: " + hit.normal);
             transform.rotation = Quaternion.LookRotation(newDirection, hit.normal);
-            GetComponent<Rigidbody>().AddForce(transform.forward * 100);
-            Vector3 velocityToClamp = new Vector3(GetComponent<Rigidbody>().velocity.x, 0, GetComponent<Rigidbody>().velocity.z);
+            cat.Rb.AddForce(transform.forward * 100);
+            Vector3 velocityToClamp = new Vector3(cat.Rb.velocity.x, 0, cat.Rb.velocity.z);
             Vector3 clampedVelocity = Vector3.ClampMagnitude(velocityToClamp, maxSpeed);
-            GetComponent<Rigidbody>().velocity = new Vector3(clampedVelocity.x, GetComponent<Rigidbody>().velocity.y, clampedVelocity.z);
+            cat.Rb.velocity = new Vector3(clampedVelocity.x, cat.Rb.velocity.y, clampedVelocity.z);
         }
     }
 }

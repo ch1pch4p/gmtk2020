@@ -33,12 +33,25 @@ public class MillingActionsScript : ActionScript
     {
         if (state == State.Walking)
         {
-            //TODO change to add force
             float singleStep = 5.0f * Time.deltaTime;
+
+            // Rotate the forward vector towards the target direction by one step
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, singleStep, 0.0f);
-            transform.rotation = Quaternion.LookRotation(newDirection);
-            GetComponent<Rigidbody>().AddForce(direction);
-            GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, speed);
+
+            // Draw a ray pointing at our target in
+            Debug.DrawRay(transform.position, newDirection, Color.red);
+
+            //Quaternion dir = Quaternion.LookRotation(newDirection, Vector3.up);
+            //newDirection = dir * Vector3.forward;
+
+            // Calculate a rotation a step closer to the target and applies rotation to this object
+            Physics.Raycast(transform.position, -1 * transform.up, out RaycastHit hit);
+            Debug.Log("Cat-to-Surface normal: " + hit.normal);
+            transform.rotation = Quaternion.LookRotation(newDirection, hit.normal);
+            rb.AddForce(transform.forward * 100);
+            Vector3 velocityToClamp = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            Vector3 clampedVelocity = Vector3.ClampMagnitude(velocityToClamp, speed);
+            rb.velocity = new Vector3(clampedVelocity.x, rb.velocity.y, clampedVelocity.z);
         }
     }
 
