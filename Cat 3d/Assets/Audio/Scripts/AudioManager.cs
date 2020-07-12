@@ -14,8 +14,8 @@ public class Sound
     public float volume = 0.8f;
     [Range(0.5f, 1.5f)]
     public float pitch = 1.0f;
-    private float variableVolume = 0.1f;
-    private float variablePitch = 0.1f;
+    private float variableVolume = 0.3f;
+    private float variablePitch = 0.2f;
 
     public void SetAudioSource(AudioSource audioSource)
     {
