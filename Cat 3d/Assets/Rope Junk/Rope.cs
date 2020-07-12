@@ -14,6 +14,8 @@ public class Rope : MonoBehaviour
     protected float CompleteLength;
     protected Transform[] Bones;
     protected Vector3[] Positions;
+    protected Vector3[] Velocities;
+    protected Vector3[] Acceleration;
 
     protected LineRenderer lineRenderer;
 
@@ -22,6 +24,7 @@ public class Rope : MonoBehaviour
     {
         Bones = new Transform[segments + 1];
         Positions = new Vector3[segments + 1];
+        Velocities = new Vector3[segments + 1];
         BonesLength = new float[segments];
         CompleteLength = 0;
         var head = this.transform;
@@ -37,13 +40,14 @@ public class Rope : MonoBehaviour
         }
 
         //create bones
-        Bones[0] = this.gameObject.transform;
-        for (int i = 1; i < Bones.Length; i++)
+        //Bones[0] = this.gameObject.transform;
+        for (int i = 0; i < Bones.Length; i++)
         {
 
             var node = new GameObject("node(" + (i) + ")");
             node.transform.parent = head;
-            node.transform.position = (head.position + (target.position - head.position).normalized * Mathf.Floor(length / segments));
+            if(i > 0)
+                node.transform.position = (head.position + (target.position - head.position).normalized * Mathf.Floor(length / segments));
             Bones[i] = node.transform;
             CompleteLength += (node.transform.position - head.position).magnitude;
             if (i > 0) { 
@@ -112,8 +116,8 @@ public class Rope : MonoBehaviour
         for(int i = 1; i < Bones.Length; i++)
         {
             Bones[i].position = Positions[i];
-            if(i > 0)
-                Debug.DrawLine(Bones[i-1].position, Bones[i].position, Color.cyan, 60f, false);
+            //if(i > 0)
+                //Debug.DrawLine(Bones[i-1].position, Bones[i].position, Color.cyan, 60f, false);
         }
         lineRenderer.SetPositions(Positions);
 
