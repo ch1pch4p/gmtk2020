@@ -44,7 +44,7 @@ public class CatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 heading = transform.forward;
+        Vector3 heading = transform.forward * -1;
         Vector3 ortho = Vector3.Cross(catMask.transform.forward, heading);
         Vector3 scale = catMask.transform.localScale;
         if (ortho.y > 0)
