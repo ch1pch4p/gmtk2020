@@ -20,7 +20,6 @@ public class CatScript : MonoBehaviour
     private float exhaustion;
     private float irritability;
 
-
     CatControllerScript controller;
 
     public float Exhaustion { get => exhaustion; set => exhaustion = value; }
