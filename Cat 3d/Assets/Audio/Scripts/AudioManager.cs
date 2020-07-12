@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         instance = this;
         for (int i = 0; i < sounds.Length; i++)
         {
