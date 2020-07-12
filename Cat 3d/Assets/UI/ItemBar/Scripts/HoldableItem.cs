@@ -25,8 +25,6 @@ public class HoldableItem : Item
         {
             //draw invisible ray cast/vector
             Debug.DrawLine(ray.origin, hit.point);
-            //log hit area to the console
-            Debug.Log(hit.point);
             currentlyHeldItem.transform.position = hit.point;
         }
     }
