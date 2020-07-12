@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CatBehaviorScript : MonoBehaviour
+public class RopeNode : MonoBehaviour
 {
     // Start is called before the first frame update
-    public virtual void Act()
+    void Start()
     {
-        //stay idle
-
+        
     }
 
-    public virtual void Start()
+    // Update is called once per frame
+    void Update()
     {
-
+        
     }
-
 }
