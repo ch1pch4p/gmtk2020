@@ -20,12 +20,13 @@ public class CatScript : MonoBehaviour
     private float exhaustion;
     private float irritability;
 
-    internal float getSpeed()
-    {
-        return this.spd;
-    }
 
     CatControllerScript controller;
+
+    public float Exhaustion { get => exhaustion; set => exhaustion = value; }
+    public float Spd { get => spd; set => spd = value; }
+    public float Excitement { get => excitement; set => excitement = value; }
+    public float Irritability { get => irritability; set => irritability = value; }
 
     void Start()
     {
