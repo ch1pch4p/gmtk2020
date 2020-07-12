@@ -30,15 +30,13 @@ public class CatScript : MonoBehaviour
     public float Irritability { get; set; }
     public Rigidbody Rb { get; set; }
     public CatControllerScript Controller { get; set; }
-    public GameObject Target { get; set; }
+    public GameObject Target;
 
     void Start()
     {
         Rb = GetComponent<Rigidbody>();
         Controller = gameObject.AddComponent<CatControllerScript>();
         //Temp Code should change target in sensing scripts
-
-        Target = Item.currentlyHeldItem;
     }
 
     // Update is called once per frame
