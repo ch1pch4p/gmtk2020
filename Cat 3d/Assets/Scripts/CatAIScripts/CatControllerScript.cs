@@ -19,7 +19,7 @@ public class CatControllerScript : MonoBehaviour
     
     private ActionScript currentAction;
     private ActionScript[] catActions = new ActionScript[5];
-    private float[] ActionWeights = new float[4] { 0f, 100f, 15f, 100f};
+    private float[] ActionWeights = new float[4] { 0f, 100f, 1f, 100f};
 
     private Rigidbody rb;
 
