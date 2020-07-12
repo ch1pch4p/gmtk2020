@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class CatScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Rigidbody rb;
 
     //stats go here
     [SerializeField] private float str = 10;
@@ -16,21 +14,21 @@ public class CatScript : MonoBehaviour
     [SerializeField] private float perc = 10;
     [SerializeField] private float spd = 10;
 
-    private float excitement;
-    private float exhaustion;
-    private float irritability;
-
-    CatControllerScript controller;
-
-    public float Exhaustion { get => exhaustion; set => exhaustion = value; }
+    public float Exhaustion { get; set; }
     public float Spd { get => spd; set => spd = value; }
-    public float Excitement { get => excitement; set => excitement = value; }
-    public float Irritability { get => irritability; set => irritability = value; }
+    public float Excitement { get; set; }
+    public float Irritability { get; set; }
+    public Rigidbody Rb { get; set; }
+    public CatControllerScript Controller { get; set; }
+    public GameObject Target { get; set; }
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        controller = gameObject.AddComponent<CatControllerScript>();
+        Rb = GetComponent<Rigidbody>();
+        Controller = gameObject.AddComponent<CatControllerScript>();
+        //Temp Code should change target in sensing scripts
+
+        Target = Item.currentlyHeldItem;
     }
 
     // Update is called once per frame

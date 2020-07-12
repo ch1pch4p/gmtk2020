@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CatBehaviorScript : MonoBehaviour
+public abstract class ActionScript : MonoBehaviour
 {
 
-    protected CatScript catScript;
+    protected CatScript cat;
+    protected CatControllerScript controller;
 
     // Start is called before the first frame update
     public virtual void Act()
@@ -15,7 +16,7 @@ public abstract class CatBehaviorScript : MonoBehaviour
 
     public virtual void Start()
     {
-        catScript = GetComponent<CatScript>();
+        cat = GetComponent<CatScript>();
     }
 
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeutralBehaviorScript : CatBehaviorScript
+public class MillingActionsScript : ActionScript
 {
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -22,8 +22,8 @@ public class NeutralBehaviorScript : CatBehaviorScript
     public override void Start()
     {
         base.Start();
-        rb = gameObject.GetComponent<Rigidbody>();
-        speed = catScript.Spd;
+        rb = cat.Rb;
+        speed = cat.Spd;
         Debug.Log("Starting Behavior");
         StartCoroutine(Idle());
     }
@@ -33,6 +33,7 @@ public class NeutralBehaviorScript : CatBehaviorScript
     {
         if (state == State.Walking)
         {
+            //TODO change to add force
             rb.velocity = direction * speed * Time.fixedDeltaTime * 10;
         }
     }
@@ -53,6 +54,7 @@ public class NeutralBehaviorScript : CatBehaviorScript
         Debug.Log(state);
         Debug.Log(direction);
         int turns = Random.Range(1, 2);
+        //TODO fix to make turns work
         for (int i = 0; i < turns; i++)
         {
             yield return new WaitForSeconds(Random.Range(0, 10));

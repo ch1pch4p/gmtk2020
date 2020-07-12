@@ -1,11 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 public class CatControllerScript : MonoBehaviour
 {
-    private CatBehaviorScript currentBehavior;
+
+    CatScript cat;
+
+    private Boolean actionLocked = false;
+    enum CatActions
+    {
+        Resting,
+        Milling,
+        Sitting,
+        Sprinting,
+        Pouncing
+    }
+    
+    private ActionScript currentAction;
+    private ActionScript[] catActions;
 
     private Rigidbody rb;
 
@@ -18,12 +33,30 @@ public class CatControllerScript : MonoBehaviour
 
     void Start()
     {
-        currentBehavior = gameObject.AddComponent<NeutralBehaviorScript>();
+        cat = GetComponent<CatScript>();
+
+        catActions.SetValue(gameObject.AddComponent<RestingActionScript>(), (int)CatActions.Resting);
+        catActions.SetValue(gameObject.AddComponent<MillingActionsScript>(), (int)CatActions.Milling);
     }
 
+    public void Lock()
+    {
+        actionLocked = true;
+    }
+
+    public void Unlock()
+    {
+        actionLocked = false;
+    }
 
     private void FixedUpdate()
     {
-        currentBehavior.Act();
+        //TODO check if action is currently locked. if not randomly select an action and perform        
+        if (!actionLocked)
+        {
+
+        }
+        
+        currentAction.Act();
     }
 }
