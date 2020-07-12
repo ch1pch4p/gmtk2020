@@ -28,7 +28,7 @@ public class RopeNew : MonoBehaviour
         Bones = new Transform[segments + 1];
         Positions = new Vector3[segments + 1];
         BonesLength = new float[segments];
-        CompleteLength Length = 0;
+        CompleteLength = 0;
 
     }
     // Update is called once per frame
