@@ -34,7 +34,11 @@ public class MillingActionsScript : ActionScript
         if (state == State.Walking)
         {
             //TODO change to add force
-            rb.velocity = direction * speed * Time.fixedDeltaTime * 10;
+            float singleStep = 5.0f * Time.deltaTime;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, direction, singleStep, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
+            GetComponent<Rigidbody>().AddForce(direction);
+            GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, speed);
         }
     }
 

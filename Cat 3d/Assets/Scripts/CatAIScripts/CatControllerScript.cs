@@ -13,14 +13,14 @@ public class CatControllerScript : MonoBehaviour
     {
         Resting,
         Milling,
+        Pouncing,
         Sitting,
-        Sprinting,
-        Pouncing
+        Sprinting
     }
     
     private ActionScript currentAction;
-    private ActionScript[] catActions;
-    private float[] ActionWeights;
+    private ActionScript[] catActions = new ActionScript[5];
+    private float[] ActionWeights = new float[3] { .1f, 100f, .1f};
 
     private Rigidbody rb;
 
@@ -35,9 +35,11 @@ public class CatControllerScript : MonoBehaviour
     {
         cat = GetComponent<CatScript>();
 
-        catActions = new ActionScript[1];
+
         catActions[(int)CatActions.Resting] = gameObject.AddComponent<RestingActionScript>();
-        //catActions.SetValue(gameObject.AddComponent<MillingActionsScript>(), (int)CatActions.Milling);
+        catActions[(int)CatActions.Milling] = gameObject.AddComponent<MillingActionsScript>();
+        catActions[(int)CatActions.Pouncing] = gameObject.AddComponent<PouncingActionScript>();
+        currentAction = catActions[(int)CatActions.Milling];
     }
 
     public void Lock()
@@ -59,10 +61,10 @@ public class CatControllerScript : MonoBehaviour
 
             UpdateWeights();
 
-            //currentAction = catActions[Choose(ActionWeights)];
+            currentAction = catActions[Choose(ActionWeights)];
         }
         
-        //currentAction.Act();
+        currentAction.Act();
     }
 
     private void UpdateWeights()
