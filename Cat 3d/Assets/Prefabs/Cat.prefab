@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 8154913200702546626}
   - component: {fileID: 8154913200702546627}
   - component: {fileID: 8154913200702546624}
-  - component: {fileID: 8154913200702546625}
   - component: {fileID: 8154913200702546638}
   - component: {fileID: 8154913200702546639}
-  - component: {fileID: 8154913200702546636}
   - component: {fileID: 8154913200702546629}
+  - component: {fileID: 8154913199749097067}
   m_Layer: 0
   m_Name: Cat
   m_TagString: cat
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8154913200702546625
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154913200702546637}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8154913200702546638
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,18 +119,7 @@ MonoBehaviour:
   anger: 10
   perc: 10
   catMask: {fileID: 2621123549078285754}
---- !u!114 &8154913200702546636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154913200702546637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ff42f55d4b2bf4691b483a23a82518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
 --- !u!114 &8154913200702546629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +132,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76be9cf024b61f947ac55e0f85d610f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &8154913199749097067
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154913200702546637}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &8154913199466313445
 PrefabInstance:
   m_ObjectHideFlags: 0
