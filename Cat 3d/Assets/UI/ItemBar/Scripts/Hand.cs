@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
     public GameObject hand;
+    public GameObject cursor;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class Hand : MonoBehaviour
     void Update()
     {
         // Get real world point to drop object
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(cursor.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {

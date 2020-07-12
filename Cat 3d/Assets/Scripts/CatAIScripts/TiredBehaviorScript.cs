@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiredBehaviroScript : CatBehaviorScript
+public class TiredBehaviorScript : CatBehaviorScript
 {
     // Start is called before the first frame update
     public override void Start()
