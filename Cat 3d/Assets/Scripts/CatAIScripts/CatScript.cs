@@ -23,6 +23,12 @@ public class CatScript : MonoBehaviour
     public float Anger { get => anger; set => anger = value; }
     public float Perc { get => perc; set => perc = value; }
 
+    [SerializeField] private float spd = 10;
+    [SerializeField] private GameObject catMask;
+    private costumeSwitcher catCostumes;
+
+    public Vector3 heading;
+
     public float Excitement { get; set; }
     public float Irritability { get; set; }
     public Rigidbody Rb { get; set; }
@@ -42,7 +48,16 @@ public class CatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 ortho = Vector3.Cross(catMask.transform.forward, heading);
+        Vector3 scale = catMask.transform.localScale;
+        if (ortho.y > 0)
+        {
+            catMask.transform.localScale = new Vector3(Mathf.Abs(scale.x), scale.y, scale.z);
+        }
+        else
+        {
+            catMask.transform.localScale = new Vector3(Mathf.Abs(scale.x) * (-1), scale.y, scale.z);
+        }
 
         //update mood
         //check for state changes based on mood
