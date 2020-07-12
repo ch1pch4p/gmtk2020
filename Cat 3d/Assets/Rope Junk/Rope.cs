@@ -27,7 +27,7 @@ public class Rope : MonoBehaviour
         Velocities = new Vector3[segments + 1];
         BonesLength = new float[segments];
         CompleteLength = 0;
-        var head = this.transform;
+        var head = this.gameObject.transform;
         if (head.childCount > 0)
         {
             for (int i = head.childCount - 1; i >= 0; i--)
@@ -46,6 +46,7 @@ public class Rope : MonoBehaviour
 
             var node = new GameObject("node(" + (i) + ")");
             node.transform.parent = head;
+            node.transform.position = head.transform.position; ;
             if(i > 0)
                 node.transform.position = (head.position + (target.position - head.position).normalized * Mathf.Floor(length / segments));
             Bones[i] = node.transform;

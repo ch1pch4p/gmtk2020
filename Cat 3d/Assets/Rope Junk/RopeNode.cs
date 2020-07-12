@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RopeNode : MonoBehaviour
+public class RopeNode
 {
-    // Start is called before the first frame update
-    void Start()
+    public RopeNode previous;
+    public RopeNode next;
+    public GameObject gameObject;
+
+    RopeNode(float damping)
     {
-        
+        gameObject = new GameObject();
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+        rb.drag = Mathf.Abs(damping);
+    }
+    RopeNode()
+    {
+        gameObject = new GameObject();
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

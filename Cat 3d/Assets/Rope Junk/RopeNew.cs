@@ -8,32 +8,31 @@ public class RopeNew : MonoBehaviour
     public int segments;
     public int length;
     public Transform target;
-    public GameObject nodeType;
+    private RopeNode[] nodes;
 
-    protected float[] BonesLength;
-    protected float CompleteLength;
-    protected Transform[] Bones;
-    protected Vector3[] Positions;
-
-    protected LineRenderer lineRenderer;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         
     }
 
-    void Init()
+    private void Awake()
     {
-        Bones = new Transform[segments + 1];
-        Positions = new Vector3[segments + 1];
-        BonesLength = new float[segments];
-        CompleteLength = 0;
 
     }
-    // Update is called once per frame
-    void Update()
+
+    private void Init()
     {
-        
+        nodes = new RopeNode[segments + 1];
+
+    }
+
+    private void Update()
+    {
+       
+    }
+
+    private void LateUpdate()
+    {
+       
     }
 }
