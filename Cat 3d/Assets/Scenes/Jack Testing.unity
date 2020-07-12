@@ -296,25 +296,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &96365168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7098227519731569591, guid: a28101385d34aba4fa3ff39fa3c65230,
-    type: 3}
-  m_PrefabInstance: {fileID: 929213996}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &96365169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96365168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73ddd42d7f978944db31d619aa8948be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cat: {fileID: 0}
 --- !u!4 &332979464 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6146300382595095389, guid: a28101385d34aba4fa3ff39fa3c65230,
@@ -330,73 +311,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
         type: 3}
-      propertyPath: billboards.Array.data[0].costumeName
-      value: Sit 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[1].costumeName
-      value: Sit 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[2].costumeName
-      value: Walk 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[3].costumeName
-      value: Walk 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[4].costumeName
-      value: Crouch
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[5].costumeName
-      value: Pounce
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[0].billboard
-      value: 
-      objectReference: {fileID: 2022733628}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[1].billboard
-      value: 
-      objectReference: {fileID: 2026300485}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[2].billboard
-      value: 
-      objectReference: {fileID: 1604042392}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[3].billboard
-      value: 
-      objectReference: {fileID: 2119467610}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[4].billboard
-      value: 
-      objectReference: {fileID: 1073637426}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: billboards.Array.data[5].billboard
-      value: 
-      objectReference: {fileID: 1413316469}
-    - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
       propertyPath: activeCostume
       value: Walk 2
       objectReference: {fileID: 0}
     - target: {fileID: 6146300382595095386, guid: a28101385d34aba4fa3ff39fa3c65230,
         type: 3}
       propertyPath: activeExpression
-      value: Angry
+      value: Normal
       objectReference: {fileID: 0}
     - target: {fileID: 6146300382595095388, guid: a28101385d34aba4fa3ff39fa3c65230,
         type: 3}
@@ -458,37 +379,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095389, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095389, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146300382595095389, guid: a28101385d34aba4fa3ff39fa3c65230,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 6146300382595095391, guid: a28101385d34aba4fa3ff39fa3c65230,
         type: 3}
       propertyPath: m_Name
-      value: Cat Bil.lboards
+      value: Cat Billboards
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28101385d34aba4fa3ff39fa3c65230, type: 3}
---- !u!1 &1073637426 stripped
+--- !u!1 &1248936222 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6146300382583354686, guid: a28101385d34aba4fa3ff39fa3c65230,
-    type: 3}
-  m_PrefabInstance: {fileID: 929213996}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1413316469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6146300383043781916, guid: a28101385d34aba4fa3ff39fa3c65230,
+  m_CorrespondingSourceObject: {fileID: 6146300382595095391, guid: a28101385d34aba4fa3ff39fa3c65230,
     type: 3}
   m_PrefabInstance: {fileID: 929213996}
   m_PrefabAsset: {fileID: 0}
@@ -585,12 +485,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1604042392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6146300383736680981, guid: a28101385d34aba4fa3ff39fa3c65230,
-    type: 3}
-  m_PrefabInstance: {fileID: 929213996}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911983465
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +498,7 @@ GameObject:
   - component: {fileID: 1911983467}
   - component: {fileID: 1911983466}
   - component: {fileID: 1911983470}
+  - component: {fileID: 1911983471}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -702,21 +597,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &2022733628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6146300383755452688, guid: a28101385d34aba4fa3ff39fa3c65230,
-    type: 3}
-  m_PrefabInstance: {fileID: 929213996}
+--- !u!114 &1911983471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2026300485 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6146300382001476377, guid: a28101385d34aba4fa3ff39fa3c65230,
-    type: 3}
-  m_PrefabInstance: {fileID: 929213996}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2119467610 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6146300383374476274, guid: a28101385d34aba4fa3ff39fa3c65230,
-    type: 3}
-  m_PrefabInstance: {fileID: 929213996}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911983465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818bef0e73de2c744835170d2bea4711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  str: 10
+  spd: 10
+  end: 10
+  foc: 10
+  anger: 10
+  perc: 10
+  catMask: {fileID: 1248936222}
