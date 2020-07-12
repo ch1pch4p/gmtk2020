@@ -4,16 +4,18 @@ using UnityEngine;
 
 public abstract class CatBehaviorScript : MonoBehaviour
 {
+
+    protected CatScript catScript;
+
     // Start is called before the first frame update
     public virtual void Act()
     {
         //stay idle
-
     }
 
     public virtual void Start()
     {
-
+        catScript = GetComponent<CatScript>();
     }
 
 }

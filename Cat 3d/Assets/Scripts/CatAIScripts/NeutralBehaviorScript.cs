@@ -21,8 +21,9 @@ public class NeutralBehaviorScript : CatBehaviorScript
 
     public override void Start()
     {
+        base.Start();
         rb = gameObject.GetComponent<Rigidbody>();
-        speed = gameObject.GetComponent<CatScript>().getSpeed();
+        speed = catScript.Spd;
         Debug.Log("Starting Behavior");
         StartCoroutine(Idle());
     }
