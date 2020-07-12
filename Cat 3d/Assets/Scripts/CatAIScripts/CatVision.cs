@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CatVision : MonoBehaviour
 {
+    float maxSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class CatVision : MonoBehaviour
             return;
         }
 
-        Vector3 targetDir = Item.currentlyHeldItem.transform.position - transform.position;
+        Vector3 targetDir = Item.currentlyHeldItem.transform.position - transform.position + Vector3.up;
         float itemToCatAngle = Vector3.Angle(targetDir, transform.forward);
         if (itemToCatAngle < 70f)
         {
@@ -34,6 +35,7 @@ public class CatVision : MonoBehaviour
             // Calculate a rotation a step closer to the target and applies rotation to this object
             transform.rotation = Quaternion.LookRotation(newDirection);
             GetComponent<Rigidbody>().AddForce(targetDir);
+            GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity, maxSpeed);
         }
     }
 }
