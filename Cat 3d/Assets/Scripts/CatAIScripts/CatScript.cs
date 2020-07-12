@@ -23,7 +23,6 @@ public class CatScript : MonoBehaviour
     public float Anger { get => anger; set => anger = value; }
     public float Perc { get => perc; set => perc = value; }
 
-    [SerializeField] private float spd = 10;
     [SerializeField] private GameObject catMask;
     private costumeSwitcher catCostumes;
 
@@ -35,7 +34,6 @@ public class CatScript : MonoBehaviour
 
     void Start()
     {
-        heading = this.gameObject.transform.forward;
         Rb = GetComponent<Rigidbody>();
         Controller = gameObject.AddComponent<CatControllerScript>();
         //Temp Code should change target in sensing scripts

@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 9149048645665723406}
   - component: {fileID: 6780016221093273905}
   - component: {fileID: 8937965287725068153}
-  - component: {fileID: 21276417722155227}
   m_Layer: 0
   m_Name: Angry
   m_TagString: Untagged
@@ -115,20 +114,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &21276417722155227
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2495037113137087547}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2597120528279147651
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +125,6 @@ GameObject:
   - component: {fileID: 7121642716443149832}
   - component: {fileID: 8661886896642422708}
   - component: {fileID: 3253653480576280816}
-  - component: {fileID: 5346656146424380234}
   m_Layer: 0
   m_Name: Asleep
   m_TagString: Untagged
@@ -209,20 +193,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5346656146424380234
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2597120528279147651}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &3708294733001425676
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +204,6 @@ GameObject:
   - component: {fileID: 5893960586170945545}
   - component: {fileID: 8484185700288824489}
   - component: {fileID: 8611800500281805580}
-  - component: {fileID: 7312965559813509156}
   m_Layer: 0
   m_Name: Alert
   m_TagString: Untagged
@@ -303,20 +272,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7312965559813509156
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3708294733001425676}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &4802774878546756704
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +283,6 @@ GameObject:
   - component: {fileID: 8256368838727644046}
   - component: {fileID: 267413927300030366}
   - component: {fileID: 462321608947549965}
-  - component: {fileID: 8797746425772422704}
   m_Layer: 0
   m_Name: Normal
   m_TagString: Untagged
@@ -397,20 +351,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8797746425772422704
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4802774878546756704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &6961574043032305598
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +362,6 @@ GameObject:
   - component: {fileID: 1981097414519336788}
   - component: {fileID: 3068131157843215147}
   - component: {fileID: 2501271674793419352}
-  - component: {fileID: 8455949171582226851}
   m_Layer: 0
   m_Name: Lazy
   m_TagString: Untagged
@@ -491,17 +430,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8455949171582226851
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6961574043032305598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
